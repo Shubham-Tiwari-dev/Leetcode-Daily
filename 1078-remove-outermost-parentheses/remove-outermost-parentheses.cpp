@@ -2,13 +2,14 @@ class Solution {
 public:
     string removeOuterParentheses(string s) {
         int count=0;
-        string res="";
-        for(char x:s){
-            if(x=='(') count++;
+        string ans;
+        for(char a:s){
+            if(a=='(') count++;
             else count--;
-            if((count==1 && x=='(') || (count==0 && x==')')) continue;
-            res+=x;
+
+            if((count==1 && a=='(')||(count==0 && a==')')) continue;
+            ans+=a;
         }
-        return res;
+        return ans;
     }
 };
