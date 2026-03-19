@@ -11,10 +11,8 @@ public:
         }
         int temp=st.size();
         for(int i=0;i<temp;i++){
-            if(!st.empty()){
             ans+=st.top();
             st.pop();
-            }
         }
         reverse(ans.begin(),ans.end());
         return ans;
