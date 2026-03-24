@@ -1,4 +1,3 @@
-// This solution was implemented with assistance from ChatGPT
 class Solution {
 public:
     vector<vector<int>> constructProductMatrix(vector<vector<int>>& grid) {
