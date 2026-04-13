@@ -18,14 +18,14 @@ public:
         q.push(root);
         while(!q.empty()){
             int size=q.size();
-            vector<int> temp;
+            int temp;
             while(size--){
                 if(q.front()->left) q.push(q.front()->left);
                 if(q.front()->right) q.push(q.front()->right);
-                temp.push_back(q.front()->val);
+                temp=q.front()->val;
                 q.pop();
             }
-            ans.push_back(temp.back());
+            ans.push_back(temp);
         }
         return ans;
     }
