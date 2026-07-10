@@ -16,18 +16,18 @@ public:
         vector<vector<int>> ans;
         queue<TreeNode*> q;
         q.push(root);
-        bool a=true;
+        bool rev=false;
         while(!q.empty()){
-            int size=q.size();
+            int size = q.size();
             vector<int> temp;
             while(size--){
-                temp.push_back(q.front()->val);
                 if(q.front()->left) q.push(q.front()->left);
                 if(q.front()->right) q.push(q.front()->right);
+                temp.push_back(q.front()->val);
                 q.pop();
             }
-            if(!a) reverse(temp.begin(),temp.end());
-            a=!a;
+            if(rev) reverse(temp.begin(),temp.end());
+            rev=!rev;
             ans.push_back(temp);
         }
         return ans;
