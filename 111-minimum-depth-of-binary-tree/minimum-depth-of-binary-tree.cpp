@@ -13,19 +13,8 @@ class Solution {
 public:
     int minDepth(TreeNode* root) {
         if(!root) return 0;
-        queue<TreeNode*> q;
-        q.push(root);
-        int cnt = 1;
-        while(!q.empty()){
-            int size = q.size();
-            while(size--){
-                if(!q.front()->left && !q.front()->right) return cnt;
-                if(q.front()->left) q.push(q.front()->left);
-                if(q.front()->right) q.push(q.front()->right);
-                q.pop();
-            }
-            cnt++;
-        }
-        return cnt;
+        if(!root->left) return 1 + minDepth(root->right);
+        if(!root->right) return 1 + minDepth(root->left);
+        return 1 + min(minDepth(root->left), minDepth(root->right));
     }
 };
