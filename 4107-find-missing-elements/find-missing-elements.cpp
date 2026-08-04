@@ -4,15 +4,9 @@ public:
         sort(nums.begin(), nums.end());
         vector<int> ans;
         int j = 0;
-        for(int i=nums[0]; i<=nums.back();){
-            if(i == nums[j]){
-                j++;
-                i++;
-            }
-            else {
-                ans.push_back(i);
-                i++;
-            }
+        for(int i=nums[0]; i<=nums.back();i++){
+            if(i == nums[j]) j++;
+            else ans.push_back(i);
         }
         return ans;
     }
